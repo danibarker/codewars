@@ -14,7 +14,11 @@ countBy(2,5) > [2,4,6,8,10]
 
 
 const countBy = (x, n) => {
-
+    let arr = []
+    for (let i = x; i <= x * n; i += x){
+        arr.push(i)
+    }
+    return arr
 }
 
 
