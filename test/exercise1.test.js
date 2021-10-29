@@ -1,11 +1,14 @@
 const chai = require("chai");
 const assert = chai.assert;
-const countBy = require('../exercises/exercise1')
-describe("Basic Tests",function(){
-  it("Testing for fixed tests", () => {
-    assert.deepEqual(countBy(1,10), [1,2,3,4,5,6,7,8,9,10], "Array does not match")
-    assert.deepEqual(countBy(2,5), [2,4,6,8,10], "Array does not match")
-    assert.deepEqual(countBy(9,5), [9,18,27,36,45], "Array does not match")
-    assert.deepEqual(countBy(100,3), [100,200,300], "Array does not match")
+const monkeyCount = require('../exercises/exercise1')
+chai.config.truncateThreshold=0;
+
+describe("Exercise 1", () => {
+  it("should work for fixed tests", () => {
+    assert.deepEqual((monkeyCount(5)), [1, 2, 3, 4, 5]);
+    assert.deepEqual((monkeyCount(3)), [1, 2, 3]);
+    assert.deepEqual((monkeyCount(9)), [1, 2, 3, 4, 5, 6, 7, 8, 9]);
+    assert.deepEqual((monkeyCount(10)), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+    assert.deepEqual((monkeyCount(20)), [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20]);
   });
 });
